@@ -1,19 +1,10 @@
 group 'soko.ekibun.flutter_qjs'
 version '1.0-SNAPSHOT'
 
-buildscript {
-    ext.kotlin_version = '1.7.10'
-    repositories {
-        google()
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:8.0.1'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    }
-}
-
+// Kotlin / AGP versions are now provided by the host app's Gradle setup
+// (settings.gradle declares org.jetbrains.kotlin.android + com.android.application).
+// Removing the pinned buildscript classpath avoids "Kotlin/AGP loaded multiple
+// times with different versions" conflicts when the host upgrades its toolchain.
 allprojects {
     repositories {
         google()
